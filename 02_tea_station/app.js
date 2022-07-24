@@ -13,3 +13,8 @@ navBtn.addEventListener("click", () => {
 navClose.addEventListener("click", () => {
   navbar.classList.remove("showNav");
 });
+window.onbeforeunload = () => {
+  for (const form of document.getElementsByTagName("form")) {
+    form.reset();
+  }
+};
