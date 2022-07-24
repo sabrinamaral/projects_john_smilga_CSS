@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Tea Station || Home</title>
+    <title>Tea Station | Home</title>
     <!-- font-awesome -->
     <link
       rel="stylesheet"
@@ -18,13 +18,25 @@
   </head>
   <body>
     <!-- navbar -->
+    <!-- navbar button -->
+    <span class="nav-btn" id='nav-btn'><i class="fas fa-bars"></i></span>
+    <nav class='navbar' id='navbar'>
+      <div class="navbar-header">
+        <span class="nav-close" id="nav-close"><i class="fas fa-times"></i></span>
+      </div>
+      <ul class="nav-items">
+        <li><a href="index.html" class="nav-link">home</a></li>
+        <li><a href="skills.html" class="nav-link">skills</a></li>
+        <li><a href="about.html" class="nav-link">about</a></li>
+        <li><a href="products.html" class="nav-link">products</a></li>
+      </ul>
+    </nav>
     <!-- header -->
     <header class='header'>
       <div class="banner">
         <h2>over one hundred flavors of</h2>
         <h1>specially</br>crafted tea</h1>
         <a href="skills.html" class='btn banner-btn'>explore</a>
-
       </div>
     </header>
     <!-- end of header -->
@@ -253,7 +265,6 @@
             &copy; <span id='date'></span>
             <span class='company'>tea station</span> all rights reserved
           </h4>
-
         </div>
       </div>
     </footer>
