@@ -26,6 +26,9 @@ body {
 a {
   text-decoration: none;
 }
+li {
+  list-style-type: none;
+}
 img {
   width: 100%;
   display: block;
@@ -60,4 +63,32 @@ p {
 .btn:hover {
   background: var(--primaryColor);
   color: var(--mainWhite);
+}
+/*  =======
+Main Navbar
+=========== */
+
+.main-navbar {
+  background: var(--darkGrey);
+  padding: 0 2rem;
+}
+.main-navbar a {
+  display: block;
+  text-transform: capitalize;
+  padding: 0.7rem 0;
+  color: var(--primaryColor);
+  letter-spacing: var(--mainSpacing);
+  transition: var(--mainTransition);
+}
+.main-navbar a:hover {
+  color: var(--mainBlack);
+}
+@media screen and (min-width: 992px) {
+  .main-navbar ul {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+  }
 }
