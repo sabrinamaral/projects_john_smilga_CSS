@@ -2,10 +2,12 @@
 Variables
 ========= */
 :root {
-  --primaryColor: #f15025;
+  --primaryColor: #d81159;
+  --secondaryColor: #ec88ac;
   --mainBlack: #222;
   --mainWhite: #fff;
   --darkGrey: #afafaf;
+  --lightGrey: #d9d6d6;
   --mainTransition: all 0.3s linear;
   --mainSpacing: 0.2rem;
 }
@@ -56,6 +58,8 @@ p {
   padding: 0.5rem 1rem;
   text-transform: capitalize;
   border: 3px solid var(--primaryColor);
+  border-radius: 0.5rem;
+  background: var(--lightGrey);
   color: var(--primaryColor);
   margin: 3rem;
   transition: var(--mainTransition);
@@ -67,7 +71,6 @@ p {
 /*  =======
 Main Navbar
 =========== */
-
 .main-navbar {
   background: var(--darkGrey);
   padding: 0 2rem;
@@ -90,5 +93,285 @@ Main Navbar
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
+  }
+}
+/*  =====
+Main Hero
+========= */
+.hero-header {
+  min-height: 100vh;
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.hero-banner p {
+  width: 80%;
+  max-width: 560px;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .hero-banner {
+    padding: 0 3rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero-header {
+    background: linear-gradient(rgba(241, 80, 37, 0.75), rgba(0, 0, 0, 0.75)),
+      url("./images/image-2.jpeg") center/cover fixed no-repeat;
+  }
+}
+/*  ===
+Cards
+======= */
+.title {
+  text-align: center;
+}
+.title h1 {
+  font-size: 2rem;
+}
+.cards {
+  padding: 4rem 0;
+}
+.cards-center {
+  width: 80vw;
+  max-width: 1170px;
+  margin: 2rem auto;
+}
+.card {
+  border: 1px solid var(--darkGrey);
+  margin-bottom: 3rem;
+}
+.card-info {
+  padding: 1rem;
+}
+.card-footer {
+  background: var(--darkGrey);
+  padding: 0.3rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+.card-footer span {
+  color: var(--primaryColor);
+}
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+/* @media screen and (min-width: 768px) {
+  .cards-center {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2.5rem;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .title h1 {
+    font-size: 3rem;
+  }
+  .cards-center {
+    grid-template-columns: repeat(3, 1fr);
+  }
+} */
+/* ALTERNATIVE FOR MEDIA QUERY = auto-fit + minmax() */
+.cards-center {
+  display: grid;
+  column-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+}
+/* grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); fill: keep adding columns*/
+
+/* 1170(screen) - 64(gap sum) / 3 = 368.666 three column layout */
+/* grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); */
+
+/* 1170(screen) - 96(gap sum) / 4 = 268.5 four column layout */
+
+/*  ===
+Tiles
+======= */
+.tiles {
+  padding: 4rem 0;
+}
+.tiles-center {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 2rem auto;
+  display: grid;
+  row-gap: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .tiles-center {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .tiles-center {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1170px) {
+  .tiles-center {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 200px);
+    grid-template-areas:
+      "a a a b"
+      "a a a c"
+      "d d d d"
+      "e f f f"
+      "e g h i";
+  }
+  .tiles img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .tile-1 {
+    grid-area: a;
+  }
+  .tile-2 {
+    grid-area: b;
+  }
+  .tile-3 {
+    grid-area: c;
+  }
+  .tile-4 {
+    grid-area: d;
+  }
+  .tile-5 {
+    grid-area: e;
+  }
+  .tile-6 {
+    grid-area: f;
+  }
+  .tile-7 {
+    grid-area: g;
+  }
+  .tile-8 {
+    grid-area: h;
+  }
+  .tile-9 {
+    grid-area: i;
+  }
+}
+/*  ===
+Layout
+======= */
+.header {
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  text-align: center;
+  padding: 0.5rem 0;
+}
+.navbar {
+  background: var(--darkGrey);
+}
+.navbar a {
+  padding: 1rem;
+  display: inline-block;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1.2rem;
+  color: var(--mainBlack);
+  transition: var(--mainTransition);
+}
+.navbar a:hover {
+  color: var(--mainWhite);
+  background: var(--secondaryColor);
+  width: 100%;
+  padding-left: 2rem;
+}
+.content {
+  padding: 2rem;
+}
+.content p {
+  font-size: 1rem;
+}
+.sidebar {
+  background: var(--primaryColor);
+  padding: 0.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  color: var(--mainWhite);
+  font-size: 1.2rem;
+  transition: var(--mainTransition);
+}
+.sidebar span:hover {
+  color: var(--lightGrey);
+  transform: scale(1.4);
+}
+.footer {
+  background: var(--mainBlack);
+  color: var(--mainWhite);
+  text-align: center;
+  text-transform: capitalize;
+  padding: 0.5rem 0;
+}
+.footer p {
+  font-size: 1rem;
+}
+.main {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto auto;
+}
+@media screen and (min-width: 768px) {
+  .navbar ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  .main {
+    grid-template-columns: [start] 150px [col-1-end] 1fr [col-2-end] 50px [end];
+    grid-template-rows: [start] auto [row-1-end] 1fr [row-2-end] auto [end];
+  }
+  .header {
+    grid-column: start/end;
+    grid-row: start/row-1-end;
+  }
+  .navbar {
+    grid-column: start/col-1-end;
+    grid-row: row-1-end/row-2-end;
+  }
+  .navbar a:hover {
+    background: transparent;
+    color: var(--primaryColor);
+  }
+  .content {
+    grid-column: col-1-end/col-2-end;
+    grid-row: row-1-end/row-2-end;
+  }
+  .sidebar {
+    grid-column: col-2-end/end;
+    grid-row: row-1-end/row-2-end;
+    grid-template-columns: 1fr;
+    background-color: var(--darkGrey);
+    align-items: center;
+    color: var(--primaryColor);
+  }
+  .sidebar span {
+    padding: 2rem 0;
+    transition: var(--mainTransition);
+  }
+  .sidebar span:hover {
+    color: var(--secondaryColor);
+    transform: scale(1.4);
+  }
+
+  .footer {
+    grid-column: start/end;
+    grid-row: row-2-end/end;
+  }
+  .navbar ul {
+    grid-template-columns: 1fr;
+    align-items: center;
+    min-height: 100%;
   }
 }
