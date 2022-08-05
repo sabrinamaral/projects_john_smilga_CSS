@@ -1,3 +1,9 @@
+/* To use AUTOPREFIXER plugin
+1 open CSS
+2 cmd a (select everything)
+3 cmd p (to open vs code bar)
+4 ">" Autoprefixer: Run */
+
 /* FONTS */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 
@@ -202,7 +208,9 @@ Navbar
   height: 5rem;
   padding: 1rem;
   display: grid;
+  -webkit-box-align: center;
   align-items: center;
+  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 
@@ -215,6 +223,7 @@ Navbar
 .nav-header {
   display: grid;
   grid-template-columns: auto 1fr;
+  -webkit-box-align: center;
   align-items: center;
 }
 
@@ -240,6 +249,8 @@ Navbar
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
+    -webkit-column-gap: 2rem;
+    -moz-column-gap: 2rem;
     column-gap: 2rem;
     justify-self: flex-end;
   }
@@ -249,6 +260,7 @@ Navbar
     color: var(--clr-grey-1);
     font-weight: bold;
     letter-spacing: var(--spacing);
+    -webkit-transition: var(--transition);
     transition: var(--transition);
   }
 
@@ -259,6 +271,7 @@ Navbar
   .nav-center {
     display: grid;
     grid-template-columns: auto 1fr;
+    -webkit-box-align: center;
     align-items: center;
   }
 }
@@ -289,11 +302,14 @@ Sidebar
   z-index: 4;
   display: grid;
   place-items: center;
+  -webkit-transition: var(--transition);
   transition: var(--transition);
+  -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
 }
 
 .show-sidebar {
+  -webkit-transform: translateX(0);
   transform: translateX(0);
 }
 
@@ -304,6 +320,7 @@ Sidebar
 .sidebar-links a {
   font-size: 2rem;
   text-transform: capitalize;
+  -webkit-transition: var(--transition);
   transition: var(--transition);
   color: var(--clr-grey-5);
   letter-spacing: var(--spacing);
@@ -326,6 +343,7 @@ Sidebar
 .social-icon {
   font-size: 1.5rem;
   color: var(--clr-grey-1);
+  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 
@@ -340,6 +358,7 @@ Sidebar
   font-size: 3rem;
   background: transparent;
   border: transparent;
+  -webkit-transition: var(--transition);
   transition: var(--transition);
   color: #bb2525;
   cursor: pointer;
@@ -415,6 +434,7 @@ Hero
 .hero-photo {
   max-width: 25rem;
   max-height: 30rem;
+  -o-object-fit: cover;
   object-fit: cover;
   border-radius: var(--radius);
   position: relative;
@@ -475,16 +495,19 @@ Services
   margin-bottom: 2rem;
   border-radius: var(--radius);
   text-align: center;
+  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 
 .service .underline {
   width: 3rem;
   height: 0.12rem;
+  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 
 .service p {
+  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 
@@ -510,6 +533,8 @@ Services
   .services-center {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    -webkit-column-gap: 2rem;
+    -moz-column-gap: 2rem;
     column-gap: 2rem;
   }
 }
@@ -544,7 +569,9 @@ Projects
   position: absolute;
   left: 50%;
   top: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  -webkit-transition: var(--transition);
   transition: var(--transition);
   opacity: 0;
 }
@@ -559,9 +586,11 @@ Projects
 }
 
 .project-img {
+  -webkit-transition: var(--transition);
   transition: var(--transition);
   border-radius: var(--radius);
   height: 15rem;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -578,12 +607,14 @@ Projects
   height: 100%;
   border: 0.25rem solid var(--clr-white);
   border-radius: var(--radius);
+  -webkit-transition: var(--transition);
   transition: var(--transition);
   opacity: 0;
 }
 
 .project:hover::after {
   opacity: 1;
+  -webkit-transform: scale(0.8);
   transform: scale(0.8);
 }
 
@@ -591,6 +622,8 @@ Projects
   .projects-center {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    -webkit-column-gap: 2rem;
+    -moz-column-gap: 2rem;
     column-gap: 2rem;
   }
 }
@@ -654,6 +687,7 @@ Connect
   left: 0;
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
   z-index: -2;
 
@@ -681,6 +715,8 @@ Connect
   padding: 3rem 5rem 10rem 5rem;
   text-align: center;
 
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+
   clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
 }
 
@@ -701,6 +737,8 @@ Skills
   .skills-center {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    -webkit-column-gap: 2rem;
+    -moz-column-gap: 2rem;
     column-gap: 2rem;
   }
 }
@@ -755,18 +793,21 @@ Skills
   position: absolute;
   left: 50%;
   top: -2rem;
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 
 .skill-text-70 {
   position: absolute;
   left: 70%;
+  -webkit-transform: translateX(-70%);
   transform: translateX(-70%);
 }
 
 .skill-text-80 {
   position: absolute;
   left: 80%;
+  -webkit-transform: translateX(-80%);
   transform: translateX(-80%);
 }
 
@@ -820,6 +861,7 @@ Timeline
 .number {
   position: absolute;
   top: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   margin-bottom: 0;
   background: var(--clr-primary-5);
@@ -838,6 +880,7 @@ Timeline
 
 .timeline-item:nth-child(odd) .number {
   right: 0;
+  -webkit-transform: translate(50%, -50%);
   transform: translate(50%, -50%);
 }
 
@@ -853,6 +896,7 @@ Blog
 .card {
   height: 27rem;
   position: relative;
+  -webkit-perspective: 1500px;
   perspective: 1500px;
 }
 
@@ -862,9 +906,13 @@ Blog
   left: 0;
   height: 100%;
   width: 100%;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  -webkit-transition: all 1.5s linear;
   transition: all 1.5s linear;
   border-radius: var(--radius);
+  -webkit-transform: translate3d(0, 0, 0);
+  visibility: visible;
 }
 
 .card-front {
@@ -873,21 +921,25 @@ Blog
 
 .card-back {
   background: var(--clr-primary-10);
+  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
   display: grid;
   place-items: center;
 }
 
 .card:hover .card-front {
+  -webkit-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
 }
 
 .card:hover .card-back {
+  -webkit-transform: rotateY(0deg);
   transform: rotateY(0deg);
 }
 
 .card-front img {
   height: 13rem;
+  -o-object-fit: cover;
   object-fit: cover;
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
@@ -896,6 +948,7 @@ Blog
 .card-footer {
   display: grid;
   grid-template-columns: auto 1fr;
+  -webkit-box-align: center;
   align-items: center;
 }
 
@@ -910,6 +963,7 @@ Blog
 .card-footer img {
   width: 2rem;
   height: 2rem;
+  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -970,6 +1024,7 @@ Single Page
 .page-info a {
   text-transform: uppercase;
   color: var(--clr-primary-5);
+  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 
@@ -977,10 +1032,78 @@ Single Page
   color: var(--clr-primary-1);
 }
 
-
-
 /*
 =============== 
-Products Page
+Projects Page
 ===============
 */
+.projects-hero {
+  height: 40vh;
+  background: var(--clr-primary-10);
+  display: grid;
+  place-items: center;
+}
+
+.projects-hero .section-title {
+  margin-bottom: 0;
+}
+
+.single-project {
+  background: var(--clr-grey-10);
+  border-radius: var(--radius);
+}
+
+.project-container img {
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+
+.project-container {
+  position: relative;
+}
+
+.project-icon {
+  position: absolute;
+  font-size: 1.6rem;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%);
+  width: 4rem;
+  height: 4rem;
+  display: grid;
+  place-items: center;
+  background: var(--clr-primary-5);
+  border-radius: 50%;
+  color: var(--clr-primary-1);
+  border: 0.375rem solid var(--clr-grey-10);
+}
+
+.project-details {
+  padding: 2rem 1.5rem;
+}
+
+.project-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: var(--clr-primary-5);
+  font-size: 1rem;
+}
+
+.project-footer a {
+  color: var(--clr-primary-5);
+  text-transform: capitalize;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  justify-self: end;
+}
+
+.project-footer a:hover {
+  color: var(--clr-primary-1);
+}
+
+.projects-page-center {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 3rem 1rem;
+}
